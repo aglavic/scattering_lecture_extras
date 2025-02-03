@@ -1,0 +1,84 @@
+# # ORSO reflectivity data file | 1.1 standard | YAML encoding | https://www.reflectometry.org/
+# data_source:
+#   owner:
+#     name: Artur Glavic
+#     affiliation: Paul Scherrer Institut
+#     contact: artur.glavic@psi.ch
+#   experiment:
+#     title: Unset
+#     instrument: Amor
+#     start_date: 2024-10-07T00:00:00
+#     probe: neutron
+#     facility: SINQ
+#     proposalID: undefined
+#   sample:
+#     name: Unset
+#     sample_parameters:
+#       Tm: {magnitude: 9.811346842105264, unit: K}
+#   measurement:
+#     instrument_settings:
+#       incident_angle: {min: 0.171, max: 0.871, unit: deg}
+#       wavelength: {min: 2.5, max: 11.5, unit: angstrom}
+#       polarization: po
+#       mu:
+#         magnitude: -0.124
+#         unit: deg
+#         comment: sample angle to horizon
+#       nu:
+#         magnitude: 0.445
+#         unit: deg
+#         comment: detector angle to horizon
+#       div:
+#         magnitude: 0.7
+#         unit: deg
+#         comment: incoming beam divergence
+#       kap:
+#         magnitude: 0.245
+#         unit: deg
+#         comment: incoming beam inclination
+#       kad:
+#         magnitude: 0.4
+#         unit: deg
+#         comment: incoming beam angular offset
+#     data_files:
+#     - file: .\raw\amor2024n005605.hdf
+#       timestamp: 2024-10-08T20:28:22+02:00
+#     additional_files:
+#     - file: '[''.\\raw\\amor2024n006545.hdf'' ''.\\raw\\amor2024n006546.hdf'']'
+#     scheme: angle- and energy-dispersive
+# reduction:
+#   software: {name: eos, version: 2.1.3}
+#   timestamp: 2025-01-27T16:16:54.567398
+#   corrections:
+#   - histogramming in lambda and alpha_f
+#   - gravity
+#   - normalisation with 'additional files'
+#   computer: PC16501
+#   call: python eos.py   -Y 2024 -n 6545,6546 -f 5605   -r 0.025 -o reduction_data\D2O_1_010K_m01_p   -l
+#     3.5 11.5 -T -0.35 0.35   --chopperPhaseOffset -7.5 --muOffset -0.024   --scale
+#     [0.52]
+# data_set: "0: spin-up"
+# columns:
+# - {name: Qz, unit: 1/angstrom, physical_quantity: normal momentum transfer}
+# - {name: R, unit: '', physical_quantity: specular reflectivity}
+# - {error_of: R, error_type: uncertainty, value_is: sigma, distribution: gaussian}
+# - {error_of: Qz, error_type: resolution, value_is: sigma, distribution: gaussian}
+# # Qz (1/angstrom)    R ()                   sR                     sQz                   
+5.1250000000000002e-03 1.5345581711305860e+00 1.3086010142288362e-01 2.0349500089016079e-04
+
+
+# data_set: "1: spin-down"
+# data_source:
+#   measurement:
+#     instrument_settings:
+#       polarization: mo
+#     data_files:
+#     - file: .\raw\amor2024n005606.hdf
+#       timestamp: 2024-10-08T20:29:53+02:00
+# reduction:
+#   timestamp: 2025-01-27T16:16:54.791145
+#   call: python eos.py   -Y 2024 -n 6545,6546 -f 5606   -r 0.025 -o reduction_data\D2O_1_010K_m01_m   -l
+#     3.5 11.5 -T -0.35 0.35   --chopperPhaseOffset -7.5 --muOffset -0.024   --scale
+#     [0.48]
+# # Qz (1/angstrom)    R ()                   sR                     sQz                   
+5.1250000000000002e-03 1.5730041604212093e+00 1.3688721838597132e-01 2.0349500089016079e-04

@@ -17,6 +17,12 @@ pip install -r requirements.txt
 
 # Execute Jupyter Notebooks
 ```
-jupyter notebook
+jupyter lab
 ```
 This should open a browser with the jupyter notebooks within the repository.
+
+# Run GenX
+In case you have issues with icon size, add the --dpi-scale commandline argument.
+```
+python -m genx { --dpi-scale 1.0}
+```

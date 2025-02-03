@@ -1,0 +1,6 @@
+jupyterlab
+matplotlib
+numpy
+scipy
+periodictable
+genx3
